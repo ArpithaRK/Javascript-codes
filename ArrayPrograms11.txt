@@ -1,0 +1,78 @@
+//----Second largest element in an array------
+function secondLargest()
+{
+    let arr = [90,45,99,33,44,82]
+    let secondLarge =0
+    arr.sort()
+    let i=arr.length-2
+    for(;i>=0;i--){
+        if(arr[i]!=arr[arr.length-1]){
+            secondLarge= arr[i]
+            return secondLarge
+        }
+    }
+}
+let findsecondLargest = secondLargest()
+console.log("second largest element is:",findsecondLargest)
+
+//----Square root of elements of an array------
+function squareRoot(){
+    let arr = [4,9,16,25,76]
+    let sqrt 
+    for(let i of arr){
+        sqrt = Math.sqrt(i)
+        console.log("square root of", i ," is :",sqrt)
+    }
+}
+squareRoot()
+
+
+//---Move zeroes to the end of the array----
+function moveZero(arr)
+{
+    let arr2 = []
+    let count=0
+    for(let i of arr){
+        if(i==0){
+            count++
+        }else
+        {
+            arr2.push(i)
+        }
+    }
+    while(count>0){
+        arr2.push(0)
+        count--
+    }
+    return arr2
+    
+}
+const arr1 = [0,11,0,7,0,8,0,55]
+console.log(moveZero(arr1))
+
+
+//----Bubble sort-----
+function bubbleSort(arr){
+    let swap = false
+    for(let i=0;i<arr.length-1;i++){
+        for(let j=0;j<arr.length-i-1;j++){
+            if(arr[j]>arr[j+1]){
+            temp=arr[j]
+            arr[j]=arr[j+1]
+            arr[j+1]=temp
+            swap=true
+            }
+        }
+         if(swap==false)
+    {
+        break
+    }
+    }
+   
+    return arr
+}
+
+const arr=[1,6,34,3,24]
+console.log("array before sorting:",arr)
+const sortarr = bubbleSort(arr)
+console.log("sorted array:",sortarr)

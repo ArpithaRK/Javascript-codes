@@ -1,0 +1,44 @@
+/* Health care [Blood test]
+Patient Name: Sathish
+Patient ID: 10567890890
+Patient phone: 044 222738
+Age:34
+Gender :Male
+Patient Address: velur.
+
+Test	Result 	Flag 	Units   	Refernce   Interval 	LAB
+WBc  	4.4	      	  X10E3/UL    	4.0-10.5	01
+RBC	    4.05	Low   X10E6/UL	   4.10 -5.60	01
+Hemoglobin	14.83		g/dl	12.5 -17.0	01
+Hematocrit	41.7		%	36.0-50.0	01
+Neutriphils	47	High	%	14-46	02
+Monocytes	3	Low	%	4-13	02*/
+
+class BloodTest{
+    constructor(patientName, patientID, phone, age, gender, address){
+        this.patientName = patientName
+        this.patientID= patientID
+        this.phone=phone
+        this.age=age
+        this.gender=gender
+        this.address=address
+    }
+    testReport(rep1){
+        console.log("Blood test report for the patient: patientID",this.patientID,", Patient name:",this.patientName)
+        
+        for (let value of rep1) {
+         alert(value);
+}
+        
+    }
+}
+let getReport = new BloodTest("Sathish", 10567890890,"044 222738",34,"Male","velur")
+ let reportValues = {
+            WBc: "4.4	X10E3/UL",      
+            RBC:  "4.05 X10E3/UL",	
+            Hemoglobin: "14.83 g/dl",	
+            Hematocrit:	"41.7%",
+            Neutriphils: "47%"
+        }
+let rep = new Map(Object.entries(reportValues))
+console.log(getReport.testReport(rep))

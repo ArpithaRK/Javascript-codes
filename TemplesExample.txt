@@ -1,0 +1,91 @@
+//---------------using FUNCTION approach----------------
+function ListOfTemples(godName){
+    if(godName == "Ganesha"){
+        ListOfGaneshaTemples(godName)
+    }
+    else if(godName == "Shiva"){
+         ListOfShivaTemples(godName)
+    }
+    else if(godName == "Raghavendra"){
+         ListOfRaghavendraTemples(godName)
+    }
+}
+
+function ListOfGaneshaTemples(godName){
+    TemplesList1 = { 
+        "SiddhivinayakaTemple": "Vijayanagar",
+        "VinayakaTemple": "Nagarabhavi",
+        "GaneshaTemple": "Jayanagar"
+    }
+    console.log("List of Ganesha Temples",TemplesList1)
+}
+
+function ListOfShivaTemples(godName){
+    TemplesList2 = { 
+        "ShivaTemple": "KalyanNagar",
+        "EshwaraTemple": "maruthinagar",
+        "ShreeshivaTemple": "JP nagar"
+    }
+    console.log("List of Shiva Temples",TemplesList2)
+}
+
+
+function ListOfRaghavendraTemples(godName){
+    TemplesList3 = { 
+        "GuruRaghavendraTemple": "Vijayanagar",
+        "RaghavendraMAtta": "Hebbal",
+        "RaghavendraMandira": "Whitefield"
+    }
+    console.log("List of Raghavendra Temples",TemplesList3)
+}
+
+ListOfTemples("Raghavendra")
+ListOfTemples("Shiva")
+ListOfTemples("Ganesha")
+
+//------------------Using CLASS AND METHODS approach-----
+
+class ListTemples{
+    constructor(searchTemple){
+        this.temple1  = searchTemple
+         if(this.temple1 == "Ganesha"){
+        this.ListOfGaneshaTemples1(this.temple1 )
+    }
+    else if(this.temple1 == "Shiva"){
+         this.ListOfShivaTemples1(this.temple1 )
+    }
+    else if(this.temple1 == "Raghavendra"){
+         this.ListOfRaghavendraTemples1(this.temple1 )
+      }  
+    }
+   
+     ListOfShivaTemples1(godName){
+       let TemplesList22 = { 
+        "ShivaTemple": "KalyanNagar",
+        "EshwaraTemple": "maruthinagar",
+        "ShreeshivaTemple": "JP nagar"
+    }
+    console.log("List of Shiva Temples",TemplesList22)
+ }
+ 
+ ListOfGaneshaTemples1(godName){
+       let TemplesList11 = { 
+        "SiddhivinayakaTemple": "Vijayanagar",
+        "VinayakaTemple": "Nagarabhavi",
+        "GaneshaTemple": "Jayanagar"
+     }
+    console.log("List of Ganesha Temples",TemplesList11)
+ }
+  ListOfRaghavendraTemples1(godName){
+       let TemplesList33 = { 
+        "GuruRaghavendraTemple": "Vijayanagar",
+        "RaghavendraMAtta": "Hebbal",
+        "RaghavendraMandira": "Whitefield"
+     }
+    console.log("List of Raghavendra Temples",TemplesList33)
+ }
+    
+}
+ListShiva = new ListTemples("Shiva")
+ListGanesha = new ListTemples("Ganesha")
+ListRaghavendra= new ListTemples("Raghavendra")

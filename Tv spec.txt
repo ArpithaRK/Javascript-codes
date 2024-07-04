@@ -1,0 +1,47 @@
+/*Tv Details Specification:
+Model:LG55LHX
+LED lighting:Backlight w/Local Dimming
+Sizes: 55 inches
+
+Wireless HDMI: yes
+USB: USB 2.0 (pictures, music,videos)
+Built in videoservice: youtube
+price(RS.): 55000*/
+
+function TVSpec(Model){
+    LEDlighting="Backlight w/Local Dimming"
+    Sizes= 55
+    WirelessHDMI= "yes"
+    USB= "USB 2.0 (pictures, music,videos)"
+    Builtinvideoservice= "youtube"
+    price= 55000
+    
+    checkSizes(Sizes)
+    checkPrice(price)
+    isWirelessHDMI(WirelessHDMI)
+    
+}
+ function checkSizes(Sizes){
+     if(Sizes<55){
+         console.log("Size should be between 50 -55 inches")
+     }else if(Sizes>50 && Sizes<=55){
+         console.log("Size is ok")
+     }
+ }
+  function  checkPrice(price){
+      if(price>55000){
+          console.log("Expensive")
+      }
+      else if(price>40000 && price <=55000){
+          console.log("Price is in the range")
+      }
+  }
+  function  isWirelessHDMI(WirelessHDMI){
+      if(WirelessHDMI=="YES"){
+           console.log("Ok to purchase")
+      }else
+      {
+           console.log("Not interested to purchase")
+      }
+  }
+TVSpec("LG55LHX")
