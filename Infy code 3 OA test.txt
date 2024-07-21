@@ -1,0 +1,19 @@
+/*Given N, X , Y where N refers to 1 to N numbers for example ig you give 5 then it should be 1 to 5(1,2,3,4,5)
+and list the numbers within the range(1 to N) which are not  divisible by both X and Y.
+Example1:Input:  5, 7, 4
+output: [1,2,3,5]
+
+Example2: 8, 2,3
+output= [1,5,7]
+
+*/
+function divisible(N, X,Y){
+    for(let i=1;i<=N;i++){
+        if(!(i%X==0) && !(i%Y==0)){
+            console.log(i)
+        }
+    }
+    
+}
+divisible(8,2,3)                  
+          

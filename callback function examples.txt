@@ -1,0 +1,30 @@
+//call back function examples:
+//Example 1 : sum of numbers of an array
+function printSum(sum){
+    console.log("Sum of numbers:",sum)
+}
+function calculateSum(arr,cback)
+{
+    let sum = 0
+    for(let i of arr){
+        sum+=i
+    }
+    cback(sum)
+}
+let arr = [1,2,3,5,6]
+calculateSum(arr,printSum)
+
+//Example 2 : Remove all odd numbers from an array,used arrow function as a callback function
+
+let arr1 = [2,4,8,7,9,13,16]
+let evenNumbers = keepEvenNumbers(arr1,(x)=> x%2==0)
+console.log("Even numbers in an array:",evenNumbers)
+function keepEvenNumbers(arr, callb){
+    let evenNum = []
+    for( let x of arr){
+        if(callb(x)){
+            evenNum.push(x)
+        }
+    }
+   return evenNum 
+}

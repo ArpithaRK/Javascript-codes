@@ -1,0 +1,54 @@
+/*A<B<C<D.....<Z<a<b<...........<z lexicographical order.
+
+so abc < bcd because abc is smallest compared to bcd as a<b.
+
+Question: Given a list of strings, find the lexicographically smallest character from each string and form the lexicographically smallest string from those characters.
+
+Example1: 
+Input: 
+array: [abc, bca, cdf]
+output: aac
+
+Explaination:
+in 1st string a is smallest, 
+2nd string: again a is smallest,
+3rd string : c is smallest,
+
+Lexicographically smallest combination is : "aac"
+
+Example 2:
+array: [xxxxx,yyyyy,zzzz,vvvv,wwwww]
+output: vwxyz {note: it should not be : xyzvw}
+
+because vwxyz is the lexicographically smallest combination compared to xyzvw
+*/
+
+
+//closure function is used: smallest function in enclosed findSmallChar function
+
+function smallest( arr){
+    let smallString =""
+    let finalString = ""
+    //used arrow function
+    let sortString = (stringg) => {
+    return stringg.split("").sort().join("")}
+    for(let str of arr){
+        smallString+=findSmallChar(str)
+        finalString=sortString(smallString)
+    }
+   
+
+    function findSmallChar(s){
+        let small = s.charAt(0)
+        let arr = s.split("");
+        for(let c of arr){
+            if(c<small)
+                small = c
+        }
+        return small;
+    }
+    console.log(finalString)
+    
+}
+let ar1 = ["xxx","yyyy","zzzz","vvvv","wwww"]
+console.log(smallest(ar1))
