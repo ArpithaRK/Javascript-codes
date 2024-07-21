@@ -1,0 +1,36 @@
+/*25. Banking SBI statement
+
+Bank Name : SBI Bank
+ATM  No :  SJNBL48
+CARD No: xxxx xxxxx xxxx 0516
+BRANCH NAME:  Bangalore Main Branch
+With Drawl : 500.00
+Available Bal Rs: 1000.00
+Website : www.statebankof india.com
+*/
+
+
+class Banking {
+    constructor(bankdetails1){
+      this.bankName = bankdetails1.get("Bank Name")
+      this.branchName = bankdetails1.get("BRANCH NAME")
+      this.website =  bankdetails1.get("Website")
+    }
+    
+    //Arrow function is used
+    setDetails = (details2) => {
+        for(let i of details2){
+            console.log(i)
+         }
+    }
+    
+    
+}
+//Map of Array DS
+let details1 = new Map([["Bank Name","SBI Bank"],["BRANCH NAME","Bangalore Main Branch"],["Website","www.statebankof india.com"]]);
+let bankDetails = new Banking(details1)
+console.log("Banking SBI account")
+console.log(bankDetails)
+//Array of Objects
+let details2 = [{"ATM  No":"SJNBL48"},{"CARD No":"xxxx xxxxx xxxx 0516"},{"With Drawl":"500"},{"Available Bal Rs":"1000"}]
+bankDetails.setDetails(details2)
