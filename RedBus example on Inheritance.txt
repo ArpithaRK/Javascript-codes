@@ -1,0 +1,69 @@
+//Redbus--Inheritance Example
+
+class Bus{
+    constructor(journey1){
+        this.from = journey1.FromStation
+        this.to = journey1.ToStation
+        this.DateofJourney= journey1.DateofJourney
+        this.DateofReturn = journey1.DateofReturn
+    }
+}
+
+class redBusOnward extends Bus{
+    constructor(journey1,journey2){
+        super(journey1)
+        this.seatNum = journey2.SeatNO
+        this.pickUpPoint = journey2.pickUpPoint
+         this.pickUpTime= journey2.pickUpTime
+         this.BusName = journey2.BusName
+    }
+    getOnwardJourney(){
+        console.log("Onward Journey details")
+        console.log(this.from, " to ", this.to)
+        alert("Dae of Journey:",this.DateofJourney)
+        alert("Pickup point:",this.pickUpPoint)
+        alert("Pickup time:",this.pickUpTime)
+         console.log("seat number:",   this.seatNum)
+         console.log(this.BusName)
+    }
+}
+
+class redBusReturn extends Bus{
+    constructor(journey1,journey2){
+        super(journey1)
+        this.seatNum = journey2.SeatNO
+        this.pickUpPoint = journey2.pickUpPoint
+         this.pickUpTime= journey2.pickUpTime
+         this.BusName = journey2.BusName
+    }
+    getReturnJourney(){
+        console.log("Return Journey details")
+        console.log(this.to, " to ", this.from)
+        alert("Dae of Return:",this.DateofReturn)
+        alert("Pickup point:",this.pickUpPoint)
+        alert("Pickup time:",this.pickUpTime)
+         console.log("seat number:",   this.seatNum)
+         console.log(this.BusName)
+    }
+}
+
+let journey = {"FromStation":"Bangalore",
+"ToStation": "Coimbatore",
+"DateofJourney":"14-july-2024",
+"DateofReturn": "24-July-2024"
+}
+let onwardJourney = {"SeatNO": 33,
+    "pickUpPoint": "Marathahalli",
+    "pickUpTime": "11-15pm",
+    "BusName": "SRS travels"}
+    
+let busdetails1= new redBusOnward(journey,onwardJourney)
+busdetails1.getOnwardJourney()
+
+let returnJourney = {"SeatNO": 3,
+    "pickUpPoint": "Ramnagar",
+    "pickUpTime": "11pm",
+    "BusName": "Kavi travels"}
+    
+let busdetails2 = new redBusReturn(journey,returnJourney)
+busdetails2.getReturnJourney()

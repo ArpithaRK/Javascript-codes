@@ -1,0 +1,15 @@
+//Reverse word String wise.
+class reverseString{
+    constructor(s){
+        this.s  = s;
+    }
+    reverseGivenString(){
+        let result = "";
+        result = this.s.split(" ").map(word=>word.split("").reverse().join(""));
+        console.log(result.join(" "));
+    }
+}
+let rev = new reverseString("This is Example");
+rev.reverseGivenString()
+
+

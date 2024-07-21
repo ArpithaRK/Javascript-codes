@@ -1,0 +1,66 @@
+/*Food coat Bills:
+
+Restaurant Name: Nandana Palace
+Type: NON-AC
+Bill No : 2
+
+Description	   Qty	Rate	Amount
+Butter Roti	    4	65.00	260.00
+Masala PApad	2	75.00	150.00
+Paneer Kadai	1	325.00	325.00
+
+Total Item : 3
+Total Qty : 7
+Food Amount:             735.00 */
+
+
+
+class foodCoatBill{
+    constructor(RestaurantName, Type, BillNo){
+        this.RestaurantName = RestaurantName
+        this.Type= Type
+        this.BillNo= BillNo
+    }
+    
+    createMenu(menu1) {
+        console.log("Menu:",menu1)
+    }
+    
+    selectedMenu(menu, quantity){
+        let price =0
+        let totalPrice =0
+        let totalQnty=0
+        let item=0
+        let percent = 5.15
+        for(let i of menu.keys()){
+            
+            price = quantity[i] * menu.get(i)
+            console.log(i,": ",quantity[i],  price)
+            totalPrice=totalPrice+price
+            totalQnty=totalQnty+quantity[i]
+            item++
+        }
+     console.log("Total Item:",item)
+     console.log("Food amount:",totalPrice )
+     console.log("Total quantity:", totalQnty)
+ 
+    }
+
+}
+let bill1 = new foodCoatBill("Nandhana palace", " NON AC", 3)
+console.log(bill1)
+let menu1 = new Map()
+        menu1.set("Butter roti",65)
+        menu1.set("masala papad", 75)
+        menu1.set("panner kadai",325)
+let quantity = {}
+
+// Add key-value pairs to the object
+quantity['Butter roti'] = 4
+quantity['masala papad'] = 2
+quantity['panner kadai'] = 1
+ bill1.createMenu(menu1)
+ bill1.selectedMenu(menu1, quantity)
+ 
+
+

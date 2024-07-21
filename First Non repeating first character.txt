@@ -1,0 +1,21 @@
+//First non repeating character in the string
+function firstNonRepeatChar(s) {
+    let n =s.length
+    for (let i =0;i < n;i++) {
+        let b  = true
+        for (let j=0; j <n; j++) {
+            if (i!=j && s[i]==s[j]) {
+                b = false
+                break
+            }
+        }
+        if (b) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+let s = "letterforlady";
+console.log(firstNonRepeatChar(s));
+
